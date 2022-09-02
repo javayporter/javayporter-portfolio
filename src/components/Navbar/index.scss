@@ -1,0 +1,19 @@
+$primary-color: #399;
+$font-size: 40px;
+
+.navbar {
+  color: $primary-color;
+  font-size: $font-size;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.links {
+  padding-right: 40px;
+  color: $primary-color;
+  text-decoration: none;
+}
