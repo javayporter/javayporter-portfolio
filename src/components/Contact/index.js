@@ -4,6 +4,8 @@ import ContactBox from "../contactBox";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SendEmail from "../SendEmail";
+import "../SendEmail";
 
 const Contact = () => {
   const service_id = "service_2eqmzxj";
@@ -11,18 +13,29 @@ const Contact = () => {
   const public_key = "dLEIsSAW_vhF5P7go";
 
   const form = useRef();
-  const notify = () => {
-    toast("Wow so easy!");
-    console.log("it worked");
-  };
+  const notify = () =>
+    toast("Thank you for your email!", {
+      position: toast.POSITION.TOP_CENTER,
+      className: "toast-message",
+    });
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const sendEmailForm = emailjs.sendForm(
+      service_id,
+      template_id,
+      form.current,
+      public_key
+    );
 
-    emailjs.sendForm(service_id, template_id, form.current, public_key).then(
+    const sendPromise = new Promise((resolve) => {
+      resolve(sendEmailForm);
+    });
+
+    sendPromise.then(
       (result) => {
-        console.log(result.text);
-        console.log("message sent.");
+        console.log(result.text, "message sent.");
+        notify();
         e.target.reset();
       },
       (error) => {
@@ -49,11 +62,12 @@ const Contact = () => {
           className="send_button"
           type="submit"
           value="Send"
-          onClick={notify}
+          // onClick={notify}
         />
         <ToastContainer />
       </form>
     </div>
   );
 };
+
 export default Contact;
