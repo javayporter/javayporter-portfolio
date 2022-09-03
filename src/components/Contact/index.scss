@@ -1,0 +1,38 @@
+input,
+label,
+textarea {
+  display: block;
+  width: 30%;
+}
+
+input,
+textarea {
+  margin-bottom: 2%;
+}
+
+// form {
+//   margin-left: 25%;
+//   margin-right: 25%;
+// }
+
+label {
+  position: relative;
+  text-align: left;
+  margin-bottom: 5px;
+  page-break-after: always;
+}
+
+input {
+  position: relative;
+  page-break-after: always;
+  height: 30px;
+}
+
+textarea {
+  margin-right: 10px;
+  height: 12em;
+}
+
+.contact-box {
+  display: block;
+}
