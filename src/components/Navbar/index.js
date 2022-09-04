@@ -4,18 +4,23 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <NavLink exact="true" className="links" to="/about">
-        about
-      </NavLink>
-      <NavLink exact="true" className="links" to="/portfolio">
-        portfolio
-      </NavLink>
-      <Link className="links" to="/experience">
-        work experience
+      <Link className="links home-link" to="/">
+        javayscript
       </Link>
-      <Link className="links" to="/contact">
-        contact
-      </Link>
+      <nav>
+        <NavLink exact="true" className="links" to="/about">
+          about
+        </NavLink>
+        <NavLink exact="true" className="links" to="/portfolio">
+          portfolio
+        </NavLink>
+        <NavLink className="links" to="/experience">
+          work experience
+        </NavLink>
+        <NavLink className="links" to="/contact">
+          contact
+        </NavLink>
+      </nav>
     </div>
   );
 };

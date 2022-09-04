@@ -6,6 +6,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SendEmail from "../SendEmail";
 import "../SendEmail";
+import { MapContainer } from "react-leaflet";
+import Map from "../Map/index";
 
 const Contact = () => {
   const service_id = "service_2eqmzxj";
@@ -45,8 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <ContactBox />
+    <div className="contact-container">
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="from_name" placeholder="Beyonce" />
@@ -59,7 +60,7 @@ const Contact = () => {
           placeholder="Awesome site! Are you available for work?"
         ></textarea>
         <input
-          className="send_button"
+          className="form-submit-button"
           type="submit"
           value="Send"
           // onClick={notify}

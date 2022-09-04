@@ -5,16 +5,32 @@ $font-size: 40px;
   color: $primary-color;
   font-size: $font-size;
   width: 100%;
-  background-color: black;
-  text-align: center;
-  padding: 14px 16px;
+  //padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
   margin-bottom: 100px;
+  display: flex;
+  // border: solid;
+  height: 25px;
 }
 
 .links {
   padding-right: 40px;
   color: $primary-color;
   text-decoration: none;
+  //border: solid;
+}
+
+.home-link {
+  text-align: left;
+  color: #ffaa33;
+}
+
+nav {
+  text-align: right;
+  flex: 1;
+}
+
+.links:hover {
+  color: rgb(207, 203, 203);
 }

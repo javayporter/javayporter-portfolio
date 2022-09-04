@@ -1,13 +1,12 @@
 .contact-box {
   display: block;
-  text-align: center;
-  border: solid;
+  text-align: right;
   margin-bottom: 3%;
 }
 
 .info {
-  text-align: center;
+  text-align: right;
   display: inline-block;
-  margin-right: 6%;
-  color: black;
+  padding-right: 20px;
+  // margin-right: 6%;
 }
