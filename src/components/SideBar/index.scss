@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Work+Sans:ital,wght@0,100;1,300&display=swap");
+
 .side-bar-link {
   text-align: left;
   display: flex;
@@ -85,4 +87,8 @@ h2 {
   text-align: left;
   //border: solid;
   width: 150%;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  //font-family: fantasy;
 }

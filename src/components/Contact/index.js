@@ -21,12 +21,6 @@ const Contact = () => {
       className: "toast-message",
     });
 
-  const notifyFieldsEmpty = () =>
-    toast("Enter name, email, and message.", {
-      position: toast.POSITION.TOP_CENTER,
-      className: "toast-message",
-    });
-
   const notifyEmpty = () =>
     toast(nameMessage + emailMessage + messageMess, {
       position: toast.POSITION.TOP_CENTER,
@@ -43,8 +37,6 @@ const Contact = () => {
     let nameValue = document.forms.myform.from_name.value;
     let emailValue = document.forms.myform.reply_to.value;
     let messageValue = document.forms.myform.message.value;
-
-    console.log("happens earlier");
 
     if (nameValue == "" || null) {
       console.log("name empty");
