@@ -1,5 +1,6 @@
 $primary-color: #0a192f;
 $secondary-color: #ffaa33;
+$text-color: #399;
 
 input,
 label,
@@ -48,12 +49,13 @@ textarea {
 
 .form-submit-button {
   background: #0a192f;
-  color: $secondary-color;
+  color: $text-color;
   border-radius: 8px;
-  border-color: #ffaa33;
+  border-color: #399;
+  border-width: 3px;
   margin-top: 8%;
 }
 
 .form-submit-button:hover {
-  background-color: #ffaa3354;
+  background-color: rgba(51, 153, 153, 0.171);
 }

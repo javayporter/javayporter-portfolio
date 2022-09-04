@@ -1,5 +1,12 @@
+import SideBar from "../SideBar";
+
 const Experience = () => {
-  return <div>Work Experience</div>;
+  return (
+    <div>
+      Work Experience
+      <SideBar />
+    </div>
+  );
 };
 
 export default Experience;
