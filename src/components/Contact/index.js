@@ -15,40 +15,91 @@ const Contact = () => {
   const public_key = "dLEIsSAW_vhF5P7go";
 
   const form = useRef();
-  const notify = () =>
+  const notifySuccess = () =>
     toast("Thank you for your email!", {
       position: toast.POSITION.TOP_CENTER,
       className: "toast-message",
     });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    const sendEmailForm = emailjs.sendForm(
-      service_id,
-      template_id,
-      form.current,
-      public_key
-    );
-
-    const sendPromise = new Promise((resolve) => {
-      resolve(sendEmailForm);
+  const notifyFieldsEmpty = () =>
+    toast("Enter name, email, and message.", {
+      position: toast.POSITION.TOP_CENTER,
+      className: "toast-message",
     });
 
-    sendPromise.then(
-      (result) => {
-        console.log(result.text, "message sent.");
-        notify();
-        e.target.reset();
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-  };
+  const notifyEmpty = () =>
+    toast(nameMessage + emailMessage + messageMess, {
+      position: toast.POSITION.TOP_CENTER,
+      className: "toast-message",
+    });
 
+  let nameMessage = "";
+  let emailMessage = "";
+  let messageMess = "";
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    let nameValue = document.forms.myform.from_name.value;
+    let emailValue = document.forms.myform.reply_to.value;
+    let messageValue = document.forms.myform.message.value;
+
+    console.log("happens earlier");
+
+    if (nameValue == "" || null) {
+      console.log("name empty");
+      nameMessage = "Enter name. ";
+    } else {
+      nameMessage = "";
+    }
+    if (emailValue == "" || null) {
+      console.log("email empty");
+      emailMessage = "Enter email. ";
+    } else {
+      emailMessage = "";
+    }
+    if (messageValue == "" || null) {
+      console.log("message empty");
+      messageMess = "Enter message. ";
+    } else {
+      messageMess = "";
+    }
+
+    if (
+      (emailValue != "" || null) &&
+      (nameValue != "" || null) &&
+      (messageValue != "" || null)
+    ) {
+      const sendEmailForm = emailjs.sendForm(
+        service_id,
+        template_id,
+        form.current,
+        public_key
+      );
+
+      const sendPromise = new Promise((resolve) => {
+        resolve(sendEmailForm);
+      });
+
+      console.log("below send promise", nameValue);
+
+      sendPromise.then(
+        (result) => {
+          console.log(result.text, "message sent.");
+          notifySuccess();
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    } else {
+      notifyEmpty();
+    }
+  }; // end of sendEmail()
   return (
     <div className="contact-container">
-      <form ref={form} onSubmit={sendEmail}>
+      <form name="myform" ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="from_name" placeholder="Beyonce" />
         <label>Email</label>
