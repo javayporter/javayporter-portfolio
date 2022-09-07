@@ -1,0 +1,33 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid-child {
+  height: 600px;
+  //border: solid;
+}
+
+.img-container {
+  background-color: orange;
+  height: 400px;
+  width: 85%;
+  border-radius: 50%;
+  position: relative;
+  top: 100px;
+}
+
+img {
+  position: relative;
+  top: -100px;
+  left: -10px;
+}
+
+.side-container {
+  text-align: center;
+}
+
+.languages {
+  border: solid;
+}

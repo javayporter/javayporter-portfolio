@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.scss";
 
 const About = () => {
   const [name, setName] = useState(() => {
@@ -14,6 +15,9 @@ const About = () => {
       <span>{name}</span>
       <button onClick={codeName}>Code Name</button>
       <button onClick={aliasName}>Human Alias</button>
+      <div>
+        <h1 className="animae">JAV</h1>
+      </div>
     </div>
   );
 };
